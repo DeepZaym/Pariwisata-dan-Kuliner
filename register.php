@@ -1,3 +1,37 @@
+<?php
+
+ include "koneksi db/koneksi.php";
+ session_start();
+
+ if(isset($_POST["register"])) {
+    header("location: dashboard.php");
+ }
+    if(isset($_POST["register"])){
+        $nama = $_POST["nama"];
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $hash_password = hash("sha256", $password);
+    
+        try {
+            $sql = "INSERT INTO user (nama, username, password,) VALUES ('$nama','$username', '$password')";
+            
+            if($mysqli->query($sql)) {
+                echo "<script> alert('Daftar akun berhasil, silahkan login')</script>";
+            }else{
+                echo "<script> alert('Daftar akun gagal, silahkan coba lagi')</script>";
+            }
+        }catch (mysqli_sql_exception) {
+                echo "<script> alert('Akun sudah digunakan, silahkan coba lagi ')</script>";
+        }
+        $mysqli->close();
+        
+    }
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,37 +43,14 @@
 
  <div class="container">
     <h1>Register</h1>
-        <form action="register.php" method="post" name="form1">
-            <table>
-                <tr>
-                    <td>Nama</td>
-                    <td><input type="text" name="nama" required></td>
-                </tr>
-                <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username" required></td>
-                </tr>
-                <tr>
-                    <td>Passsword</td>
-                    <td><input type="password" name="password" required></td>
-                </tr>
-                <tr>
-                    <td>level</td>
-                    <td>
-                     <select name="level" id="level" required>
-                      <option disabled selected> pilih </option>
-                       <option value="admin">Admin</option>
-                       <option value="user">User</option>
-                     </select>
-                    </td>
-                </tr>
-                <tr>
-                <tr>
-                    <td></td>
-                    <td><input class="btn" type="button" name="Submit" value="Register">
-                </tr>
-                
-
-    
+    <form action="register.php" method="POST">
+        <input type="text" placeholder="Nama" name="nama" required>
+        <br>
+        <input type="text" placeholder="Username" name="username" required>
+        <br>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit" name="register">Daftar Sekarang</button required>
+        <p class="message">Sudah punya akun? <a href="login.php">silahkan masuk</a></p>
+    </form>
 </body>
 </html>

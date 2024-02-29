@@ -9,10 +9,9 @@ $mysqli =mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $da
 
 //$host = mysqli_connect("localhost","root","");
 
-if($mysqli){
-    echo "koneksi db berhasil.<br/>";
-}else{
-    echo "koneksi gagal.<br/>";
+if($mysqli->connect_error) {
+    echo "Koneksi database gagal.<br/>";
+    die("error!"); 
 }
 
 ?>

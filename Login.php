@@ -28,7 +28,7 @@
 
         </form>
         <div class="Forgot">
-            <a href="register.php">Register</a> <forgot_password href="#">Forgot Password</forgot_password>
+            <p1>belum punya akun??? </><a href="register.php">silahkan daftar dulu</a> <forgot_password href="#">Forgot Password</forgot_password>
         </div>
  </div>   
 </body>
