@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(wallpaper\ web.jpg) no-repeat;
+    background: url(Gambar/Background.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
