@@ -19,7 +19,7 @@
 <body>  
 
 <header>
-        <a href="login.php">Home</a>
+        <a href="index.html">Home</a>
         <a href="register.php">Register</a>
         <a href="dashboard.php"></a>
     </header>

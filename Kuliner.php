@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style1.css">
     <title>Kuliner lain</title>
-    <link rel="stylesheet" href="Model/style1.css">
+    <link rel="stylesheet" href="Model/styleKuliner.css">
     
 </head>
 <body>

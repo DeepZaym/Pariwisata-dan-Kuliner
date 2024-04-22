@@ -1,33 +1,16 @@
 <?php
+include_once("koneksi.php");
+if(isset($_POST['Submit'])){
+    $nama= $_POST['nama'];
+    $username= $_POST['username'];
+    $password= $_POST['password'];
+    $role= "user";
 
- include "koneksi db/koneksi.php";
- session_start();
-
- if(isset($_POST["register"])) {
-    header("location: dashboard.php");
- }
-    if(isset($_POST["register"])){
-        $nama = $_POST["nama"];
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        $hash_password = hash("sha256", $password);
     
-        try {
-            $sql = "INSERT INTO user (nama, username, password,) VALUES ('$nama','$username', '$password')";
-            
-            if($mysqli->query($sql)) {
-                echo "<script> alert('Daftar akun berhasil, silahkan login')</script>";
-            }else{
-                echo "<script> alert('Daftar akun gagal, silahkan coba lagi')</script>";
-            }
-        }catch (mysqli_sql_exception) {
-                echo "<script> alert('Akun sudah digunakan, silahkan coba lagi ')</script>";
-        }
-        $mysqli->close();
-        
-    }
-    
-
+    $result = mysqli_query($mysqli,
+    "INSERT INTO pengguna(nama,password,role,username) VALUES('$nama','$password','$role','$username')");
+    header("location:Login.php");
+}
 ?>
 
 
@@ -38,19 +21,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-</head>
+    <link rel="stylesheet" href="dekorRegister.css"/>
+    </head>
 <body>
-
- <div class="container">
-    <h1>Register</h1>
+ <div class="wrapper">
+ <div class="img" style="background-image: url(Gambar/Meee.jpg);"></div>
     <form action="register.php" method="POST">
+        <h1>Register</h1>
+        <div class="input-box">
         <input type="text" placeholder="Nama" name="nama" required>
-        <br>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
         <input type="text" placeholder="Username" name="username" required>
-        <br>
+            <i class='bx bxs-lock' ></i>
+        </div>
+        <div class="input-box">
         <input type="password" placeholder="Password" name="password" required>
-        <button type="submit" name="register">Daftar Sekarang</button required>
-        <p class="message">Sudah punya akun? <a href="login.php">silahkan masuk</a></p>
-    </form>
+            <i class='bx bxs-lock' ></i>
+        </div>
+        <!-- <select name="role">
+                <option value="admin">admin</option>
+                <option value="user">user</option>
+                <option value="founder">founder</option>
+            </select> -->
+          <input type="submit" name="Submit">
+            <a href="login.php">
+        <button type="submit" name="register" class="button"<p class="message">Sudah punya akun? <a href="login.php">silahkan masuk</a></p></button required>
+            </a>
+ </div>   
 </body>
 </html>

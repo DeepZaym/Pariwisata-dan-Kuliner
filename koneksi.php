@@ -1,7 +1,7 @@
 <?php
 // isi nama host, username mysql, dan password mysql
 $databaseHost = "localhost";
-$databaseName = "kuliner";
+$databaseName = "10ukl";
 $databaseUsername = "root";
 $databasePassword = "";
 
