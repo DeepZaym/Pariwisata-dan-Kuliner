@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="Model/styleProfil.css">
 </head>
 <body>
+<?php include "navbar.html" ?>
+        
     <div class="main">
-        <div class="img" style="background-image: url(Gambar/Meee.jpg);"></div>
+        <div class="img" style="background-image: url('Gambar/Meee.jpg');"></div>
         <h1>Muhammad Zaim Nadhif Amin</h1>
         <div class="text">Im a student from <strong>Sidoarjo, Indonesia</strong></div>
         <p>Assalamualaikum, welcome to my website ma brotha and sista.
@@ -20,7 +22,6 @@
             <li><a href=""><box-icon name='meta' type='logo' ></box-icon></a></li>
         </ul>
     </div>
-<style></style>
-    
+
 </body>
 </html>

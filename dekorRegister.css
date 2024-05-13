@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -10,7 +10,7 @@ body{
     align-items: center;
     min-height: 100vh;
     background-color: white;
-    /* background-image: url(Gambar/Background.jpg); */
+    background-image: url("Gambar/Background.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -99,4 +99,4 @@ body{
     font-size: 16px;
     color: #333;
     font-weight: 600;
-}
+} */
