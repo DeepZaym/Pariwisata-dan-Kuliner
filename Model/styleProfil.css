@@ -62,3 +62,12 @@ p {
     height: auto;
     color: #324e32;
 }
+
+.ig {
+    display: flex;
+    padding-top: -30px;
+    justify-content: center; /* Menyelaraskan secara horizontal */
+    align-items: center; /* Menyelaraskan secara vertikal */
+    height: 100px; /* Atur tinggi container sesuai kebutuhan */
+    margin-left: 50px;
+}

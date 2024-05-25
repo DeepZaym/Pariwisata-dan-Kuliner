@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +35,7 @@ body {
 
 .logo {
     float: left;
-    margin-left: 46px;
+    margin-left: 96px;
     padding: 0px 38px;
     font-family: 'raleway', sans serif;
     font-size: 25px;
@@ -48,7 +56,8 @@ body {
     margin: 0;
     padding: 0;
     height: 80px;
-    width: 100%;
+    width: 200%;
+    text-decoration: none;
 
 }
 
@@ -69,7 +78,7 @@ body {
 }
 
 .nav ul li:hover {
-    border-bottom: 3px solid black;
+    border-bottom: 5px solid black;
     transition: all .3s ease;
 
 }
@@ -77,17 +86,20 @@ body {
 .header {
     text-align: center;
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 72%;
+    right: 10%;
     transform: translate(-50%, -50%);
+    width: 70vh;
 
 }
 
 .header h1 {
     color: aliceblue;
-    text-align: left;
+    text-align: center;
     font-family: 'Noto Serif JP', sans-serif;
     font-size: 50px;
+    text-transform: capitalize;
 
 }
 
@@ -97,20 +109,20 @@ body {
 }
 
 .content-header {
-    position: absolute;
+    position:absolute;
     transform: translate(-50%, -50%);
     text-align: center;
-    top: 55%;
+    top: 60%;
     left: 73%;
-
+    width: 500px;
+    margin-left: 0px;
 }
 
 .content-header p {
-    color:aliceblue#fff;
-    font-family: 'raleway', sans-serif;
-    font-size: 16px;
-    text-align: left;
-    color: #fff690;
+    font-family: 'comic sans ms', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: black;
 
 }
 
@@ -139,11 +151,7 @@ text {
     overflow: hidden;
 }
 
-.tombol > li > a {
-    color: rgb(0, 68, 121);
-    text-decoration: none;
 
-}
 
 footer {
     background-color: #C1F2B0;
@@ -204,6 +212,23 @@ footer {
     margin: 0px 5px;
 }
 
+
+.budi{
+    background-color: white;
+    margin-left: 2.5cm;
+    border-radius: 15px;
+}
+
+.tombol li a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    position: center;
+}
+
+.out {
+    margin: 5px;
+}
     </style>
 </head>
 <body>
@@ -211,7 +236,8 @@ footer {
         <div class="nav">
             <div class="logo">
                 <a href="#">
-                    <p>Kuliner Khas Jawa Timur</p>
+                    <p>Selamat Datang di Kuyliner</p>
+                    
                 </a>
             </div>
             <ul class="tombol">
@@ -220,20 +246,22 @@ footer {
                 <li> <a href="Profil.php">Profil</a></li>
                 <li> <a href="Login.php">Login</a></li>
                 <li> <a href="register.php">Register</a></li>
+                <li class="budi">Hallooo, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>
+                <li class="out"> <a href="Login.php">Log-Out</a></li>
             </ul>
         </div>
     </div>
     <div class="header">
-        <h1>kuliner <span>Jatim</span></h1>
+        <h1>Pesan online <span> sekarang juga!!!</span></h1>
     </div>
 
     <div class="content-header">
-        <p>Jawa Timur terkenal dengan kuliner yang bercitarasa tinggi dan sudah mendunia salah satunya rawon.</p>
+        <p>Kapan lagi kulineran keliling indonesia cukup di rumah aja. Cukup pilih dari menu kami, lakukan pemesanan, dan kami akan mengantarkan hidangan lezat langsung ke pintu Anda.</p>
         <br>
     </div>
 
     <div class="col-img">
-        <img src="Gambar/Screenshot 2023-11-21 162503.png" alt="">
+        <img src="Gambar/Background.jpg" alt="">
     </div>
 
     <footer>

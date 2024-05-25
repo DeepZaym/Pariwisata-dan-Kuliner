@@ -21,7 +21,9 @@ if(isset($_POST['Submit'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="dekorRegister.css"/>
+    <link rel="stylesheet" href="Model/dekorRegister.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     </head>
 <body>
  <div class="wrapper">
@@ -34,7 +36,7 @@ if(isset($_POST['Submit'])){
         </div>
         <div class="input-box">
         <input type="text" placeholder="Username" name="username" required>
-            <i class='bx bxs-lock' ></i>
+            <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
         <input type="password" placeholder="Password" name="password" required>
@@ -45,9 +47,9 @@ if(isset($_POST['Submit'])){
                 <option value="user">user</option>
                 <option value="founder">founder</option>
             </select> -->
-          <input type="submit" name="Submit">
+          <input type="submit" name="Submit" class="button">
             <a href="login.php">
-        <button type="submit" name="register" class="button"<p class="message">Sudah punya akun? <a href="login.php">silahkan masuk</a></p></button required>
+        <button type="submit" name="register" class="button"<p  class="button">Sudah punya akun? <a href="login.php">silahkan masuk</a></p></button required>
             </a>
  </div>   
 </body>

@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f0f0f0; */
+    background-image: url(/Gambar/rendang.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    /* background: #ffffff; */
+    background-image: url(/Gambar/rendang.jpg);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-box {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Adjust padding to make room for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.input-box i {
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+    pointer-events: none; /* Ensure the icon does not block input */
+}
+
+.button {
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.button:hover {
+    background: #45a049;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[readonly] {
+    background: #f9f9f9;
+}

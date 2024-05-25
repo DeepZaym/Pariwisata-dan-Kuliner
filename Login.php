@@ -4,7 +4,9 @@ session_start();
 // Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "10ukl");
 
-// Jika form disubmit
+// Variabel untuk menyimpan pesan kesalahan
+$error = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -15,29 +17,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = mysqli_fetch_assoc($result);
 
     // Periksa apakah pengguna ditemukan dan password cocok
-    if ($password == $row["password"]) {
+    if ($row && $password == $row["password"]) {
         $_SESSION["username"] = $username;
         if ($row["role"] == "admin") {
-            header("Location: admin/viwtableuser.php");
+            header("Location:viwtableuser.php");
         } else {
-            header("Location: index.html");
+            header("Location: index.php");
         }
         exit();
     } else {
-        echo "username atau password salah.";
+        $error = 'Username atau password salah.';
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel ="stylesheet" href="Model/dekorasi login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 <style> 
 *{
     margin: 0px;
@@ -58,7 +57,7 @@ body{
 .wrapper{
     width: 420px;
     background: transparent;
-    border: 2px solid rgba(225, 225, 225, .2);
+    border: 3px solid rgba(225, 225, 225, .2);
     backdrop-filter: blur(5px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: whitesmoke;
@@ -118,37 +117,72 @@ body{
     font-weight: 600;
 }
 
-.Forgot .Register{
-    text-align: center;
+.wrapper .submit-regist {
+    width: 340px;
+    height: 45px;
+    margin-top: 30px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
 
+.wrapper .button {
+    width: 340px;
+    height: 45px;
+    margin-top: 30px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.5cm;
+    text-decoration: none;
+}
+
+.wrapper .button .a{
+    text-decoration: none;
+    color: green;
+    text-align: center;
+    position: center;
 }
 
 </style>
-
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Cek apakah ada pesan error dari PHP
+    const errorMessage = '<?php echo $error; ?>';
+    if (errorMessage) {
+        alert(errorMessage);
+    }
+});
+</script>
 </head>
 <body>
  <div class="wrapper">
- <div class="img" style="background-image: url(Gambar/Meee.jpg);"></div>
     <form action="" method="POST">
         <h1>Log-In</h1>
         <div class="input-box">
-            <input type="text" name="username" id="username" placeholder="place ur username here"
-            required>
+            <input type="text" name="username" id="username" placeholder="place ur username here" required>
             <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
-            <input type="password" name="password" id="password" placeholder="place ur password here"
-            required>
+            <input type="password" name="password" id="password" placeholder="place ur password here" required>
             <i class='bx bxs-lock' ></i>
         </div>
-                <input type=
-                "submit" name="login" class="submit-login" value="Login">
-
-
-        </form>
-        <div class="Forgot">
-            <p1>belum punya akun??? </><a href="register.php">silahkan daftar dulu</a> <forgot_password href="#">Forgot Password</forgot_password>
-        </div>
+        <input type="submit" name="login" class="submit-login" value="Login">
+    </form>
+    <button type="submit" name="register" class="button"<p class="message">Belum bikin akun? <a class="a" href="register.php">silahkan daftar</a></p></button required>
+            </a>
  </div>   
 </body>
 </html>

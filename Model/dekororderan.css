@@ -1,23 +1,26 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: img src="Gambar/Background.jpg";
+    weight: 10vh;
+    background-color: #40A578;
+    /* background-image: url(Gambar/Background.jpg); */
     background-size: cover;
     background-position: center;
+    padding-top: 100px; /* Adjust the padding-top value to match the height of the navbar */
 }
 
-.wrapper{
+.wrapper {
     width: 420px;
     background: transparent;
-    border: 2px solid rgba(225, 225, 225, .2);
+    border: 3px solid rgba(225, 225, 225, .2);
     backdrop-filter: blur(5px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: whitesmoke;
@@ -28,6 +31,7 @@ body{
 .wrapper h1 {
     font-size: 36px;
     text-align: center;
+    margin-bottom: 20px; /* Added margin-bottom for spacing */
 }
 
 .wrapper .input-box {
@@ -47,15 +51,14 @@ body{
     border-radius: 40px;
     font-size: 16px;
     color: white;
-    padding: 20px 45px 20px 20px
+    padding: 20px 45px 20px 20px;
 }
 
-
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: white;
 }
 
-.input-box i{
+.input-box i {
     position: absolute;
     right: 20px;
     top: 50%;
@@ -63,7 +66,7 @@ body{
     font-size: 20px;
 }
 
-.wrapper button {
+.submit-order {
     width: 340px;
     height: 45px;
     background: white;
@@ -75,9 +78,4 @@ body{
     font-size: 16px;
     color: #333;
     font-weight: 600;
-}
-
-.Forgot .Register{
-    text-align: center;
-
 }
