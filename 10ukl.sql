@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+<<<<<<< HEAD
 -- Generation Time: May 25, 2024 at 02:53 PM
+=======
+-- Generation Time: Apr 26, 2024 at 05:28 AM
+>>>>>>> 0387e62d83dd53a19ee219f4ef5a4c47b0831eb4
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +28,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `barang`
 --
 
@@ -76,6 +81,8 @@ INSERT INTO `order` (`idorder`, `IdPengguna`, `IdBarang`, `alamat`, `qty`, `cust
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 0387e62d83dd53a19ee219f4ef5a4c47b0831eb4
 -- Table structure for table `pengguna`
 --
 
@@ -96,6 +103,7 @@ INSERT INTO `pengguna` (`IdPengguna`, `nama`, `username`, `password`, `role`) VA
 (2, 'aaa', 'aaa', '222', 'user'),
 (3, 'vaio', 'vaio', '333', 'user'),
 (4, 'zaim', 'zaim', '555', 'admin'),
+<<<<<<< HEAD
 (5, 'nabil', 'nabil', '222', 'user'),
 (6, 'mimin', 'admin', 'qqq', 'role'),
 (7, 'mimin', 'admin', 'qqq', 'Array'),
@@ -108,12 +116,16 @@ INSERT INTO `pengguna` (`IdPengguna`, `nama`, `username`, `password`, `role`) VA
 (14, 'senin', 'h-seminggu', '111', 'user'),
 (15, 'nampilin', 'nama username disini', '999', 'user'),
 (16, 'na', 'dip', '111', 'user');
+=======
+(5, 'nabil', 'nabil', '222', 'user');
+>>>>>>> 0387e62d83dd53a19ee219f4ef5a4c47b0831eb4
 
 --
 -- Indexes for dumped tables
 --
 
 --
+<<<<<<< HEAD
 -- Indexes for table `barang`
 --
 ALTER TABLE `barang`
@@ -127,6 +139,8 @@ ALTER TABLE `order`
   ADD UNIQUE KEY `IdPengguna` (`IdPengguna`,`IdBarang`);
 
 --
+=======
+>>>>>>> 0387e62d83dd53a19ee219f4ef5a4c47b0831eb4
 -- Indexes for table `pengguna`
 --
 ALTER TABLE `pengguna`
@@ -137,6 +151,7 @@ ALTER TABLE `pengguna`
 --
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
@@ -153,6 +168,12 @@ ALTER TABLE `order`
 --
 ALTER TABLE `pengguna`
   MODIFY `IdPengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+=======
+-- AUTO_INCREMENT for table `pengguna`
+--
+ALTER TABLE `pengguna`
+  MODIFY `IdPengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> 0387e62d83dd53a19ee219f4ef5a4c47b0831eb4
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
