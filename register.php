@@ -42,14 +42,9 @@ if(isset($_POST['Submit'])){
         <input type="password" placeholder="Password" name="password" required>
             <i class='bx bxs-lock' ></i>
         </div>
-        <!-- <select name="role">
-                <option value="admin">admin</option>
-                <option value="user">user</option>
-                <option value="founder">founder</option>
-            </select> -->
           <input type="submit" name="Submit" class="button">
             <a href="login.php">
-        <button type="submit" name="register" class="button"<p  class="button">Sudah punya akun? <a href="login.php">silahkan masuk</a></p></button required>
+        <button type="submit" name="register" class="button"<p  class="button"><a class="a" href="login.php">Sudah punya akun? silahkan masuk</a></p></button required>
             </a>
  </div>   
 </body>

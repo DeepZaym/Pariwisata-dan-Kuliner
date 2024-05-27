@@ -1,0 +1,49 @@
+/* terimakasih.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #40A578, #9DDE8B, #E6FF94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+.thank-you-container {
+    text-align: center;
+    background-color: rgba(0, 132, 73, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.thank-you-message h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.thank-you-message p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    color: #ffffff;
+    background: #ff5722;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.home-button:hover {
+    background: #e64a19;
+}

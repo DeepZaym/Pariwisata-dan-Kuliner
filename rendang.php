@@ -7,15 +7,16 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 if (isset($_POST['Submit']) && isset($_SESSION['IdPengguna'])) {
     // Mengamankan nilai sesi
-    $IdPengguna = mysqli_real_escape_string($mysqli, $_SESSION['IdPengguna']);
+    $IdPengguna = $_SESSION['IdPengguna'];
     $IdBarang = 1;
-    $alamat = mysqli_real_escape_string($mysqli, $_POST['alamat']);
-    $qty = mysqli_real_escape_string($mysqli, $_POST['qty']);
-    $custom = mysqli_real_escape_string($mysqli, $_POST['custom']);
+    $alamat = $_POST['alamat'];
+    $qty = $_POST['qty'];
+    $custom = $_POST['custom'];
     $harga_per_unit = 20000;
     $total = $qty * $harga_per_unit; // Menghitung total harga
-    $pembayaran = mysqli_real_escape_string($mysqli, $_POST['pembayaran']);
-    
+    $pembayaran = $_POST['pembayaran'];
+    $tanggal = date('Y-m-d H:i:s'); // Current date in 'YYYY-MM-DD' format
+
     // Debugging: Print variable values
     echo "IdPengguna: $IdPengguna<br>";
     echo "IdBarang: $IdBarang<br>";
@@ -24,27 +25,18 @@ if (isset($_POST['Submit']) && isset($_SESSION['IdPengguna'])) {
     echo "Custom: $custom<br>";
     echo "Total: $total<br>";
     echo "Pembayaran: $pembayaran<br>";
+    echo "Tanggal: $tanggal<br>";
 
-    // Query untuk memasukkan data ke dalam tabel `order` menggunakan prepared statement
-    $stmt = $mysqli->prepare("INSERT INTO `order` (IdPengguna, IdBarang, alamat, qty, custom, total, pembayaran, tanggal) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)");
-    if ($stmt === false) {
-        die('Prepare failed: ' . htmlspecialchars($mysqli->error));
-    }
-
-    $bind = $stmt->bind_param("iisiiis", $IdPengguna, $IdBarang, $alamat, $qty, $custom, $total, $pembayaran);
-    if ($bind === false) {
-        die('Bind failed: ' . htmlspecialchars($stmt->error));
-    }
-
-    $exec = $stmt->execute();
+    // Insert a new record
+    $sql = "INSERT INTO `order` (IdPengguna, IdBarang, alamat, qty, custom, total, pembayaran, tanggal) VALUES ('$IdPengguna', '$IdBarang', '$alamat', '$qty', '$custom', '$total', '$pembayaran', '$tanggal')";
+    $exec = $mysqli->query($sql);
     if ($exec) {
-        header("Location: kuliner.php");
+        header("Location: terimakasih.php");
         exit();
     } else {
-        echo "Gagal menyimpan data: " . htmlspecialchars($stmt->error);
+        echo "Gagal menyimpan data: " . htmlspecialchars($mysqli->error);
     }
 
-    $stmt->close();
     $mysqli->close();
 }
 ?>
@@ -54,7 +46,7 @@ if (isset($_POST['Submit']) && isset($_SESSION['IdPengguna'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Transaksi Kuliner</title>
+    <title>Rendang</title>
     <link rel="stylesheet" href="Model/dekororder.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script>
@@ -70,19 +62,19 @@ if (isset($_POST['Submit']) && isset($_SESSION['IdPengguna'])) {
                 sisa = number_string.length % 3,
                 rupiah = number_string.substr(0, sisa),
                 ribuan = number_string.substr(sisa).match(/\d{3}/g);
-                
+
             if (ribuan) {
                 var separator = sisa ? '.' : '';
                 rupiah += separator + ribuan.join('.');
             }
-            
+
             return rupiah;
         }
     </script>
 </head>
 <body>
     <div class="wrapper">
-        <h1>Input Transaksi Kuliner</h1>
+        <h1>Check Out Rendang</h1>
         <form action="" method="POST">
             <div class="input-box">
                 <label for="alamat">Alamat:</label>

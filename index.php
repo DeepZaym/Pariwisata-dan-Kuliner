@@ -267,12 +267,9 @@ footer {
     <footer>
         <div class="footercontainer">
             <div class="socia1lcons">
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-google-plus"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/zaimnadhif.zaimnadhif?mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/deepzaym/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@DeepZaym"><i class="fa-brands fa-youtube"></i></a>
 
             </div>
             

@@ -130,7 +130,7 @@ body {
                 <h3 class="card-title">Kuliner Rendang</h3>
                 <span class="card-by">
                     pesan rendang klik
-                    <a href='rendang.php' class="card-admin"> DISINI!!!!!</a>
+                    <a href='Loginrendang.php' class="card-admin"> DISINI!!!!!</a>
                 </span>
             </div>
 
@@ -150,7 +150,7 @@ body {
                 <h3 class="card-title">Kuliner Ketoprak</h3>
                 <span class="card-by">
                    pesan Ketoprak klik
-                   <a href='ketoprak.php' class="card-admin"> DISINI!!!!!</a>
+                   <a href='Loginketoprak.php' class="card-admin"> DISINI!!!!!</a>
                 </span>
             </div>
 
@@ -169,7 +169,7 @@ body {
                 <h3 class="card-title">Kuliner Soto Banjar</h3>
                 <span class="card-by">
                     pesan soto banjar klik
-                    <a href='sotobanjar.php' class="card-admin"> DISINI!!!!!</a>
+                    <a href='Loginsotobanjar.php' class="card-admin"> DISINI!!!!!</a>
                 </span>
             </div>
 
