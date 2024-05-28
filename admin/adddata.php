@@ -18,18 +18,20 @@
         </div>
         <div class="input-box">
         <input type="text" placeholder="Username" name="username" required>
-            <i class='bx bxs-lock' ></i>
+        <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
         <input type="password" placeholder="Password" name="password" required>
             <i class='bx bxs-lock' ></i>
         </div>
-        <select name="role">
-                <option value="admin">admin</option>
-                <option value="user">user</option>
-            </select>
+<div class="input-box">
+                <select id="role" name="role" required>
+                    <option value="admin">ADMIN</option>
+                    <option value="user">USER</option>
+                </select>
+</div>
           
-            <input type="submit" name="Submit">
+            <input class="button" type="submit" name="Submit">
  </div>   
 </body>
 </html>

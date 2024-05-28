@@ -88,3 +88,25 @@ body{
 .a{
     color: green
 }
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Adjust padding to make room for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.input-box i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 18px;
+    pointer-events: none; /* Ensure the icon does not block input */
+}

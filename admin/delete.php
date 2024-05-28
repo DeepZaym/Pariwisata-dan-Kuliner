@@ -1,15 +1,11 @@
 <?php 
-include '../koneksi.php';
-$id = $_GET['IdPengguna'];
-mysql_query("DELETE FROM pengguna WHERE IdPengguna='$id'")or die(mysql_error());
- 
-header("location:viwtableuser.php?pesan=hapus");
+    include("../koneksi.php");
 
-include 'koneksi.php';
+    if (!isset($_GET['id'])){
+        header('Location: ../viwtableuser.php');
+    }
+    $id = $_GET['id'];
 
-$id = $_GET['IdPengguna'];
-
-mysql_query("DELETE FROM pengguna WHERE IdPengguna='$id'")or die(mysql_error());
-
-header("location:viwtableuser.php?pesan=hapus");
-?>
+    $result = mysqli_query($mysqli, "DELETE FROM pengguna WHERE IdPengguna=$id");
+    header("location:../viwtableuser.php?pesan=hapus");
+    ?>

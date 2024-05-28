@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Periksa apakah pengguna ditemukan dan password cocok
     if ($row && $password == $row["password"]) {
         $_SESSION["username"] = $username;
+        $_SESSION["IdPengguna"] = $row["IdPengguna"]; 
         if ($row["role"] == "admin") {
             header("Location:viwtableuser.php");
         } else {

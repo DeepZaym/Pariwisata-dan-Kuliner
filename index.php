@@ -215,7 +215,6 @@ footer {
 
 .budi{
     background-color: white;
-    margin-left: 2.5cm;
     border-radius: 15px;
 }
 
@@ -224,10 +223,6 @@ footer {
     color: #fff;
     text-align: center;
     position: center;
-}
-
-.out {
-    margin: 5px;
 }
     </style>
 </head>
@@ -243,7 +238,8 @@ footer {
             <ul class="tombol">
                 <li> <a href="">Beranda</a></li>
                 <li> <a href="Kuliner.php">Kuliner</a></li>
-                <li> <a href="Profil.php">Profil</a></li>
+                <li> <a href="riwayat.php">Pesanan</a></li>
+                <li> <a href="Profil.php">Founder</a></li>
                 <li> <a href="Login.php">Login</a></li>
                 <li> <a href="register.php">Register</a></li>
                 <li class="budi">Hallooo, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>

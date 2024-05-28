@@ -119,6 +119,7 @@ th, td {
     background-color: #FF9800;
     border-radius: 15px;
     color: black;
+    margin-right: 20px;
 }
 
 .aksi .hapus {
@@ -157,7 +158,7 @@ th, td {
         <div class="nav">
             <ul class="tombol">
                 <li class="back"><a href="index.php">Back</a></li>
-                <li> <a href="admin/tableorder.php">orders</a></li>
+                <li class="back"> <a href="tableorder.php">orders</a></li>
         </div>
 
     <table border="1" class="table" >
@@ -175,16 +176,16 @@ th, td {
     $nomor= 1;
     // echo $nomor;
     include "koneksi.php";
-    $query_mysql = mysqli_query($mysqli, "SELECT * FROM `order`") or die(mysqli_error());
+    $query_mysql = mysqli_query($mysqli, "SELECT * FROM pengguna") or die(mysqli_error());
 
         while ($data = mysqli_fetch_array($query_mysql)){
             ?>
     <tr>
         <td><?php echo $nomor++; ?></td>
-        <td><?php echo $data['IdPengguna']; ?></td>
-        <td><?php echo $data['IdBarang']; ?></td>
-        <td><?php echo $data['alamat']; ?></td>
-        <td><?php echo $data['qty']; ?></td>        
+        <td><?php echo $data['nama']; ?></td>
+        <td><?php echo $data['username']; ?></td>
+        <td><?php echo $data['password']; ?></td>
+        <td><?php echo $data['role']; ?></td>        
         <td class="aksi">
          <a class="hapus" href='admin/delete.php?id=<?php echo $data["IdPengguna"];?>'>Hapus</a>
          <a class="edit" href='admin/edit.php?id=<?php echo $data['IdPengguna'];?>'>Edit</a>
